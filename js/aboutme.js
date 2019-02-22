@@ -57,7 +57,7 @@ if (favDay.toLocaleUpperCase('en-US') === 'FRIDAY') {
     alert('Sorry, its wrong guess. Lets try another question');
 }
 
-alert('Now, guess my favorite number. You have 4 chances to try :)')
+alert('Now, guess my favorite number. You have 4 chances to try :)');
 var favNumber;
 var counter = 1;
 
@@ -66,12 +66,16 @@ while (favNumber !== 9 || counter === 4) {
 
     if (favNumber < 9) {
         alert('Sorry you guessed too low. Try again');
+        console.log("Guessed number: " + favNumber);
     } else if (favNumber > 9) {
         alert('Sorry you guessed too high. Try again');
+        console.log("Guessed number: " + favNumber);
     } else if (isNaN(favNumber) || favNumber === null) {
         alert('Please enter an actual number');
+        console.log("Guessed number: " + favNumber);
     }
     counter++;
+    console.log("Number of guesses" + counter);
 }
 
 if (counter < 4) {
@@ -88,13 +92,13 @@ var statesResided = ['Colorado', 'Washington', 'Washington DC', 'Iowa', 'Missour
 var stateGuess = prompt('Can you guess atleast one USA states I resided? Please enter full state name : ');
 var rightGuess;
 var guessCounter = 1;
-while (rightGuess === 'Y' || guessCounter === 6) {
+while (rightGuess === true || guessCounter === 6) {
   for (var i = 0; i < statesResided.length; i++) {
       console.log('Current state:', statesResided[i]);
 
       if (stateGuess === statesResided[i]) {
          alert('You guessed it correctly! Hurray!!');
-         rightGuess = 'Y';
+         rightGuess = true;
          break;
       }
   } 
@@ -103,4 +107,4 @@ while (rightGuess === 'Y' || guessCounter === 6) {
      alert('Meh!! - Try again. This is try ' + guessCounter);
   }
 }
-alert('Thanks for playing.')
+alert('Thanks for playing.');
